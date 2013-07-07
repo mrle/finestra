@@ -1,0 +1,38 @@
+Logo:
+Finestra
+
+Podnaslov: 
+PVC i aluminijumska stolarija
+
+Osnovna navigacija:
+1. PVC
+	- Profili (Petokomorni, Sestokomorni)
+	- Okovi (Sigenija, Maco)
+2. Aluminijum
+	- Profili (Hladni Profil, Termici Most)
+	- Okovi (Stublina, Maco, Master)
+3. Drvo/Alu.
+	- Profili
+	- Okovi
+4. Prateca oprema
+	- PVC/Alu. roletne
+	- Okapnici
+	- Stakla (Niskoemisiono (4 g. doba), Punjeno argonom, Termo staklo, Flot staklo)
+5. Usluge
+	- Montaza
+	- Demontaza
+	- Prevoz
+6. Galerija
+7. Kontakt 
+
+Side navigation: isto kao i osnovna, samo je nema na homepage.
+
+Homepage:
+Slajder 4-5 slika
+
+Footer: isto kao i osnovna navigacija.
+
+Boje: Pozadina bijela (transparentna), Narandzasta primarna, Siva-Crna sekundarna
+
+Kontakt:
+ - Telefon: 069-244-0872
