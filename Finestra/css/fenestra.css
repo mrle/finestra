@@ -1,9 +1,15 @@
-﻿body {margin:0; background-color:#363636;}
+﻿/* FONTS */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic&subset=latin,latin-ext);
+
+body {margin:0; background-color:#363636;}
+h1 {margin:0;}
+mark {background:none;}
 #content {width:900px; min-width:320px; margin:0 auto; background-color:white;}
 
 /* Constants */
 .layout-imgs {background-image:url(../images/finestra_sprite_layout.png); background-repeat:no-repeat;}
 .main-font {font-family:Helvetica, Arial, sans-serif;}
+.secondary-font {font-family:'Open Sans Condensed',sans-serif;}
 .nav-ul {list-style-image:none; list-style-type:none; padding:0; margin:0;}
 .nav-a {}
 
@@ -28,26 +34,46 @@
 #hedaer-top-logo > div {padding:1px 0; border-bottom:2px black solid;}
 #hedaer-top-logo > div > a {background:url(../images/finestra_main_logo.png) no-repeat scroll 0 0 transparent; width:320px; height:80px; display:block; margin:0 auto; padding:0 3px;}
 /* Header - main navigation */
-#header-main-nav {border-bottom:1px solid #aaaaaa;}
-#header-main-nav > div {text-align:center;}
-#header-main-nav > div > ul {display:inline-block; list-style-position:outside;}
-#header-main-nav > div > ul > li {max-width:320px; text-align:center; border-top:4px solid white; color:#222222; position:relative; display:inline-block;}
-#header-main-nav > div > ul > li:hover {border-top:4px #EF4135 solid; color:#EF4135;}
-#header-main-nav > div > ul > li:hover ul {display:block;}
-#header-main-nav > div > ul > li > a {font-size:12px; line-height:36px; height:36px; font-weight:bold; padding:0 10px; color:inherit; text-decoration:none; text-transform:uppercase; display:block;}
+#header-main-nav {border-bottom:1px solid #aaaaaa; text-align:center;}
+#header-main-nav > ul {display:inline-block; list-style-position:outside;}
+#header-main-nav > ul > li {max-width:320px; text-align:center; border-top:4px solid white; color:#222222; position:relative; display:inline-block;}
+#header-main-nav > ul > li:hover {border-top:4px #EF4135 solid; color:#EF4135;}
+#header-main-nav > ul > li:hover ul {display:block;}
+#header-main-nav > ul > li > div > a {font-size:12px; line-height:36px; height:36px; font-weight:bold; padding:0 10px; color:inherit; text-decoration:none; text-transform:uppercase; display:block;}
 .sub-nav-ul {position:absolute; color:#dddddd; left:0; top:36px; display:none; overflow:hidden; z-index:1000; background-color:#363636; font-size:12px; list-style-position:outside;}
 .sub-nav-ul > li {max-width:320px; min-width:200px; text-align:left; padding:25px 20px 25px; border-left:4px #363636 solid; color:inherit;}
 .sub-nav-ul > li:hover {border-left:4px #EF4135 solid; background-color:#313131;}
 .sub-nav-ul > li > a {font-size:13px; font-weight:bold; text-decoration:none; color:inherit;}
-.sub-nav-ul > li > a:hover {color:#EF4135;}
+.sub-nav-ul a:hover {color:#EF4135;}
 .sub-nav-ul > li > ul {font-size:11px; display:inline-block; list-style-position:outside; color:yellow;}
 .sub-nav-ul > li > ul > li {display:inline-block; padding-right:2px;}
 .sub-nav-ul > li > ul > li > a {text-decoration:none; text-transform:lowercase; font-style:italic; color:yellow;}
-.sub-nav-ul > li > ul > li > a:hover {color:#EF4135;}
 
-/* MAIN */
-#main-content {height:700px; background-color:#dddddd; border-bottom:1px solid #aaaaaa;}
-.content-box {margin:15px 15px 15px 15px; background-color:rgba(0,0,0,0.5)}
+/* CONTENT */
+#main-content {height:auto; background-color:#dddddd; border-bottom:1px solid #aaaaaa;}
+/* Content - homepage slider */
+#homepage-slider {display:block;}
+#homepage-slider .banner {position: relative; overflow:hidden; width:100%; height:300px;}
+#homepage-slider .banner ul {list-style:none; margin:0px; padding:0px;}
+#homepage-slider .banner ul li {float: left; display:block; min-height:300px; width:33%; background-size:100% 100%;}
+#homepage-slider .banner .dots {position:absolute; top:0; bottom:20px; right:20px;}
+#homepage-slider .banner .dots li {display:inline-block; width:10px; height:10px; margin:0 4px; border:2px solid #fff; border-radius:6px; opacity:.4; cursor:pointer; transition:background .5s, opacity .5s; text-indent: -999em;}
+#homepage-slider .banner .dots li.active {opacity:1; background:#fff;}
+#homepage-slider .banner ul li div {margin:30px; background:#fff; opacity:.8; color:#000; width:400px;}
+#homepage-slider .banner ul li div > h1 {font-size:40px; margin:0; padding:10px;}
+#homepage-slider .banner ul li div > div {font-size:25px; display:block; padding:10px; margin:0; border:0;}
+#homepage-slider .banner ul li div > div > ul {list-style:none; margin:0; padding:0; display:inline-block;}
+#homepage-slider .banner ul li div > div > ul > li {display:block; float:left;}
+/* Content - cntent box */
+.content-box {margin:10px 0; background-color:white;}
+.content-box h1 {padding:25px 15px 35px 15px; font-size:39px; font-weight:bold; color:#EF4135;}
 
 /* FOOTER */
-#footer-content {height:200px; background-color:white;}
+#footer-content {background-color:white;}
+/* Footer - footer menu */
+#footer-menu {width:70%; padding:5px; position:relative;}
+#footer-menu a {text-decoration:none; color:inherit;}
+#footer-menu > div {font-size:13px; font-weight:bold; display:block; color:#222222; float:left; margin:15px 0 0 25px; width:140px;}
+#footer-menu > div > a {text-transform:uppercase;}
+#footer-menu > div > ul {margin:10px 0 5px 10px;}
+#footer-menu a:hover {color:#EF4135;}
