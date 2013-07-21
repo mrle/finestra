@@ -7,7 +7,7 @@
         <meta name="keywords" content="pvc" />
 
         <!-- Styles -->
-        <!--<link type="text/css" rel="stylesheet" href="css/reset.css" />-->
+        <link type="text/css" rel="stylesheet" href="css/reset.css" />
         <link type="text/css" rel="stylesheet" href="css/fenestra.css" />
     </head>
     <body class="main-font">
@@ -40,8 +40,8 @@
                 <nav id="header-main-nav">
                     <ul class="nav-ul">
                         <li>
-                            <div>
-                                <a href="#">Drvo / Alu.</a>
+                            <div id="nav-drvo-alu">
+                                <a href="http://www.google.com">Drvo / Alu.</a>
                                 <ul class="sub-nav-ul nav-ul">
                                     <li>
                                         <a href="#">Okovi</a>
@@ -53,7 +53,7 @@
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div id="nav-pvc">
                                 <a href="#">PVC</a>
                                 <ul class="sub-nav-ul nav-ul">
                                     <li>
@@ -74,7 +74,7 @@
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div id="nav-alu">
                                 <a href="#">Aluminium</a>
                                 <ul class="sub-nav-ul nav-ul">
                                     <li>
@@ -96,7 +96,7 @@
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div id="nav-uslge">
                                 <a href="#">Usluge</a>
                                 <ul class="sub-nav-ul nav-ul">
                                     <li>
@@ -112,7 +112,7 @@
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div id="nav-ostalo">
                                 <a href="#">Ostalo</a>
                                 <ul class="sub-nav-ul nav-ul">
                                     <li>
@@ -138,12 +138,12 @@
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div id="nav-galerija">
                                 <a href="#">Galerija</a>
                             </div>
                         </li>
                         <li>
-                            <div>
+                            <div id="nav-kontakt">
                                 <a href="#">Kontakt</a>
                             </div>
                         </li>
@@ -155,62 +155,140 @@
                     <!-- Unislider -->
                     <div class="banner">
                         <ul>
-                            <li id="slide-1" style="background-image:url(images/slide_1.png); background-size: 100%; width: 20%;">
-                                <div>
+                            <li style="background-image:url(images/slide_1.png); background-size: 100%; width: 20%;">
+                                <div class="layout-imgs">
                                     <h1>Početak!</h1>
                                     <div><mark>Finestra</mark> je počela sa radom. Očekujemo Vas.</div>
                                 </div>
                             </li>
-                            <li id="slide-2" style="background-image:url(images/slide_2.png); background-size: 100%; width: 20%;">
-                                <div>
+                            <li style="background-image:url(images/slide_2.png); background-size: 100%; width: 20%;">
+                                <div class="layout-imgs">
                                     <h1>Posetite nas na društvenim mrežama</h1>
                                     <div>Pratite najnovije vesti na našim Facebook i Tweeter nalozima:</div>
                                     <ul>
-                                        <li><a href="http://www.facebook.com">Facebook</a></li>
-                                        <li><a href="http://www.tweeter.com">Tweeter</a></li>
+                                        <li>
+                                            <div class="big-button fb-button">
+                                                <a class="main-font" href="http://www.facebook.com" target="_blank">Facebook</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="big-button tw-button">
+                                                <a class="main-font" href="https://twitter.com" target="_blank">Twitter</a>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li id="slide-3" style="background-image:url(images/slide_3.png); background-size: 100%; width: 20%;">
-                                <div>
+                            <li style="background-image:url(images/slide_3.png); background-size: 100%; width: 20%;">
+                                <div class="layout-imgs">
                                     <h1>Široka lepeza profila</h1>
                                     <div>Radimo sa profilima vodećih svetskih proizvođača dokazanim u dugogodišnjoj praksi.</div>
                                     <ul>
-                                        <li><a href="http://www.google.com">Brend A</a></li>
-                                        <li><a href="http://www.google.com">Brend B</a></li>
-                                        <li><a href="http://www.google.com">Brend C</a></li>
+                                        <li>
+                                            <div class="big-button">
+                                                <a class="main-font " href="http://www.google.com">Brend A</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="big-button">
+                                                <a class="main-font" href="http://www.google.com">Brend B</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="big-button">
+                                                <a class="main-font" href="http://www.google.com">Brend C</a>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li id="slide-4" style="background-image:url(images/slide_4.png); background-size: 100%; width: 20%;">
-                                <div>
+                            <li style="background-image:url(images/slide_4.png); background-size: 100%; width: 20%;">
+                                <div class="layout-imgs">
                                     <h1>Iskustvo</h1>
                                     <div>Nakon višegodišnjeg iskustva odlučili smo da pokrenemo sopstvenu proizvodnju. Pogledajte naše ranije radove u galeriji.</div>
                                     <ul>
-                                        <li><a href="http://www.google.com">Galerija</a></li>
+                                        <li>
+                                            <div class="big-button">
+                                                <a class="main-font" href="http://www.google.com">Galerija</a>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
-                            <li id="slide-5" style="background-image:url(images/slide_5.png); background-size: 100%; width: 20%;">
-                                <div>
+                            <li style="background-image:url(images/slide_5.png); background-size: 100%; width: 20%;">
+                                <div class="layout-imgs">
                                     <h1>Pronađite nas!</h1>
                                     <div><mark>Finestra</mark> se nalazi u Mladenovcu nadomak Beograda. Pozovite nas: 063/559-4563</div>
+                                    <ul>
+                                        <li>
+                                            <div class="big-button">
+                                                <a class="main-font" href="http://www.google.com">Kontakt</a>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
                     </div>
-
                 </div>
                 <div class="content-box">
                     <article>
                         <h1>Dobro došli!</h1>
-                        <span><mark>FINESTRA</mark> je samostalna zanatska radnja koja se bavi proizvodnjom i ugradnjom vodećih evropskih proizvođača.</span>
+                        <p>
+                            <mark>FINESTRA</mark> je samostalna zanatska radnja koja se bavi proizvodnjom i ugradnjom vodećih evropskih proizvođača. Ova recenica nema smisla ali ajde :).
+                        </p>
+                        <p>
+                            Suscipit phasellus cum venenatis adipiscing varius nostra facilisis rutrum sollicitudin scelerisque. Vitae ut sociis pharetra pulvinar phasellus ad mollis lacus. Risus curabitur arcu sociis lacus aliquam dictumst. Per pretium fames sollicitudin sociosqu mi cubilia dictum. Tincidunt cras lacinia dapibus id senectus amet dui curabitur habitant sociis facilisi. Accumsan neque justo elit amet posuere duis primis eleifend. Blandit curabitur magna gravida habitasse mi cubilia. Lobortis.
+                        </p>
                     </article>
                 </div>
             </div>
             <footer id="footer-content">
-                <nav id="footer-menu"></nav>
-                <div id="footer-contact"></div>
+                <nav id="footer-nav">
+                    <div>
+                        <div id="footer-logo">
+                            <img src="images/finestra_footer_logo.png" alt="Finestra" />
+                        </div>
+                        <div class="footer-nav-col"></div>
+                        <div class="footer-nav-col"></div>
+                        <div class="footer-nav-col"></div>
+                        <div id="footer-search-social">
+                            <div id="footer-search">
+                                <form id="footer-search-form" action="index.html">
+                                    <input id="search-querry" name="search-querry" type="text" />
+                                    <input type="submit" value="Traži" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div id="footer-contact">
+                    <div id="map-box">
+                        <div>
+                            <div class="footer-big-button">
+                                <a href="#">Kontakt</a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div>Adresa: </div>
+                                    <div>Alekse Šantića 56, BEOGRAD</div>
+                                </li>
+                                <li>
+                                    <div>Telefon: </div>
+                                    <div>063/445-6839</div>
+                                </li>
+                                <li>
+                                    <div>Elektronska pošta: </div>
+                                    <div>srdjo@gmail.com</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div></div>
+                        <iframe id="google-map" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=novi+sad+kopernikova&amp;aq=&amp;sll=45.255102,19.813628&amp;sspn=0.010196,0.026157&amp;doflg=ptk&amp;ie=UTF8&amp;hq=&amp;hnear=Kopernikova,+Novi+Sad,+South+Ba%C4%8Dka+District,+Vojvodina,+Serbia&amp;t=m&amp;ll=45.255072,19.813585&amp;spn=0.018126,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed">
+                        </iframe>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
         <!-- JS files -->

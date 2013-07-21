@@ -1,31 +1,57 @@
 ﻿$(document).ready(function() { 
     // render footer menu
-    //renderFooterMenu();
+    renderFooter();
+
     // Unislider initialization
+    activateHomepageSlider();
+});
+
+var activateHomepageSlider = function() {
     $(function() {
         $('.banner').unslider({
             speed: 500,               //  The speed to animate each slide (in milliseconds)
-            delay: 3000,              //  The delay between slide animations (in milliseconds)
+            delay: 5000,              //  The delay between slide animations (in milliseconds)
             complete: function() {},  //  A function that gets called after every slide animation
             keys: true,               //  Enable keyboard (left, right) arrow shortcuts
             dots: true,               //  Display dot navigation
-            fluid: true              //  Support responsive design. May break non-responsive designs
+            fluid: true               //  Support responsive design. May break non-responsive designs
         });
     });
-});
+}
 
+var renderFooter = function () {
+    var footerContent = $('#footer-content');
+    var footerNav = $('#footer-nav');
+    var footerContact = $('#footer-contact');
 
-var renderFooterMenu = function () {
-    var maxMenuItemsPerCol = 10;
+    // set widths
+    footerNav.width($('.footer-nav-col') * 3);
+    footerContact.width(footerContent.width()  - footerNav.width());
+    $('#google-map').width(footerContact.width() - 10);
+    $('#google-map').height((footerContact.width()/3) * 2);
 
-    //$("#header-main-nav > ul > li > div").clone().appendTo("#footer-menu");
-    //$("#footer-menu div ul li ul").remove();
-    //$("#footer-menu div ul").removeClass("sub-nav-ul");
+    // set navigation
+    var navColumns = $('.footer-nav-col');
+    for (var i = 0; i < navColumns.length; i++) {
+        if (i == 0) {
+            $('#nav-drvo-alu').clone().appendTo(navColumns[i]);
+            $('#nav-pvc').clone().appendTo(navColumns[i]);
+        }
+        else if (i == 1) {
+            $('#nav-alu').clone().appendTo(navColumns[i]);
+            $('#nav-uslge').clone().appendTo(navColumns[i]);
+        }
+        else if (i == 2)
+            $('#nav-ostalo').clone().appendTo(navColumns[i]);
+    }
+    $('.footer-nav-col div ul li ul').remove();
+    $(".footer-nav-col div ul").removeClass("sub-nav-ul");
 
-    var mainNavs = $("#header-main-nav > ul > li > div").clone();
-    //for (var i = 0; )
-    var count = $("#footer-menu div").length + $("#footer-menu div > ul > li").length;
-    var footerMenuWidth = $("#footer-menu");
-    var footerDev = $("#footer-menu > div");
-    alert(count + " - " + footerDev.height() + " - " + footerMenuWidth.width());
+    // set height
+    (footerNav.height() > footerContact.height()) ? footerContent.height(footerNav.height()) : footerContent.height(footerContact.height());
+
+}
+
+var setStreetAddress = function() {
+
 }

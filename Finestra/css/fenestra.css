@@ -1,46 +1,50 @@
-﻿/* FONTS */
+﻿/* IMPORTS - Font */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic&subset=latin,latin-ext);
 
-body {margin:0; background-color:#363636;}
-h1 {margin:0;}
-mark {background:none;}
-#content {width:900px; min-width:320px; margin:0 auto; background-color:white;}
-
-/* Constants */
+/* Common elements */
+body {margin:0; background-color:#363636; background:url(../images/dark_Tire.png) repeat;}
+mark {background:none; text-transform:uppercase;}
+#content {width:900px; min-width:320px; margin:0 auto; background:url(../images/gplaypattern.png) repeat;}
+.footer-big-button {background-color:#EF4135; height:38px;}
+.footer-big-button > a {text-decoration:none; color:white; font-weight:bold; font-size:14px; text-transform:uppercase; padding:12px 20px;}
+.big-button {background-color:#313131; height:36px;}
+.big-button > a {text-decoration:none; color:white; font-weight:bold; font-size:12px; text-transform:uppercase; padding:12px 20px;}
+.fb-button {background-color:#3B5998 !important;}
+.tw-button {background-color:#4099FF !important;}
+.big-button:hover {background-color:#EF4135 !important;}
 .layout-imgs {background-image:url(../images/finestra_sprite_layout.png); background-repeat:no-repeat;}
 .main-font {font-family:Helvetica, Arial, sans-serif;}
 .secondary-font {font-family:'Open Sans Condensed',sans-serif;}
-.nav-ul {list-style-image:none; list-style-type:none; padding:0; margin:0;}
-.nav-a {}
+.nav-ul {list-style-image:none; list-style-type:none;}
 
 /* HEADER */
 /* Header - top contacts */
 #header-top-contacts { padding:8px 0; background-color:#363636;}
-#header-top-contacts > ul {display:inline-block;}
-#header-top-contacts > ul > li {padding:0 8px; float:left; font-size:11px; font-weight:bold;}
-.top-cont-label {display:inline; float:left; color:#aaaaaa; text-transform:uppercase;}
-.top-cont-val {display:inline; float:left; color:#dddddd; padding-right:15px; padding-left:5px;}
+#header-top-contacts > ul {display:inline-block; border:0;}
+#header-top-contacts > ul > li {padding:0 4px; float:left; font-size:11px; font-weight:bold;}
+.top-cont-label {display:inline; float:left; color:#aaa; text-transform:uppercase;}
+.top-cont-val {display:inline; float:left; color:#ddd; padding-right:5px; padding-left:5px;}
 /* Header - top navigation */
 #header-top-nav {height:36px;}
 #header-top-nav > div {text-align:right; padding-bottom:2px;}
 .top-nav-social {margin:2px; width:32px; height:32px; float:right;}
 #top-fb {background-position:0 0;}
 #top-tw {background-position:-32px 0px;}
-#top-go {background-position:-64px 0;}
+#top-go {background-position:-64px 0; display:none;}
 #top-fb:hover {background-position:0 -32px;}
 #top-tw:hover {background-position:-32px -32px;}
 #top-go:hover {background-position:-64px -32px;}
 /* Header - logo */
-#hedaer-top-logo > div {padding:1px 0; border-bottom:2px black solid;}
-#hedaer-top-logo > div > a {background:url(../images/finestra_main_logo.png) no-repeat scroll 0 0 transparent; width:320px; height:80px; display:block; margin:0 auto; padding:0 3px;}
+#hedaer-top-logo > div {border-bottom:2px black solid; height:120px; vertical-align:bottom;}
+#hedaer-top-logo > div > a {background:url(../images/finestra_main_logo.png) no-repeat; width:320px; height:80px; display:block; margin:0 auto;}
 /* Header - main navigation */
-#header-main-nav {border-bottom:1px solid #aaaaaa; text-align:center;}
+#header-main-nav {border-bottom:1px solid #aaa; text-align:center; background:#fff;}
 #header-main-nav > ul {display:inline-block; list-style-position:outside;}
-#header-main-nav > ul > li {max-width:320px; text-align:center; border-top:4px solid white; color:#222222; position:relative; display:inline-block;}
+#header-main-nav > ul > li {max-width:320px; text-align:center; border-top:4px solid white; color:#222; position:relative; display:inline-block;}
 #header-main-nav > ul > li:hover {border-top:4px #EF4135 solid; color:#EF4135;}
 #header-main-nav > ul > li:hover ul {display:block;}
 #header-main-nav > ul > li > div > a {font-size:12px; line-height:36px; height:36px; font-weight:bold; padding:0 10px; color:inherit; text-decoration:none; text-transform:uppercase; display:block;}
-.sub-nav-ul {position:absolute; color:#dddddd; left:0; top:36px; display:none; overflow:hidden; z-index:1000; background-color:#363636; font-size:12px; list-style-position:outside;}
+.sub-nav-ul {position:absolute; color:#ddd; left:0; top:36px; display:none; overflow:hidden; z-index:1000; background-color:#363636; font-size:12px; list-style-position:outside;}
 .sub-nav-ul > li {max-width:320px; min-width:200px; text-align:left; padding:25px 20px 25px; border-left:4px #363636 solid; color:inherit;}
 .sub-nav-ul > li:hover {border-left:4px #EF4135 solid; background-color:#313131;}
 .sub-nav-ul > li > a {font-size:13px; font-weight:bold; text-decoration:none; color:inherit;}
@@ -50,30 +54,46 @@ mark {background:none;}
 .sub-nav-ul > li > ul > li > a {text-decoration:none; text-transform:lowercase; font-style:italic; color:yellow;}
 
 /* CONTENT */
-#main-content {height:auto; background-color:#dddddd; border-bottom:1px solid #aaaaaa;}
+#main-content {height:auto; background-color:#ddd; border-bottom:1px solid #aaa; padding:15px 25px;}
 /* Content - homepage slider */
-#homepage-slider {display:block;}
-#homepage-slider .banner {position: relative; overflow:hidden; width:100%; height:300px;}
-#homepage-slider .banner ul {list-style:none; margin:0px; padding:0px;}
-#homepage-slider .banner ul li {float: left; display:block; min-height:300px; width:33%; background-size:100% 100%;}
-#homepage-slider .banner .dots {position:absolute; top:0; bottom:20px; right:20px;}
-#homepage-slider .banner .dots li {display:inline-block; width:10px; height:10px; margin:0 4px; border:2px solid #fff; border-radius:6px; opacity:.4; cursor:pointer; transition:background .5s, opacity .5s; text-indent: -999em;}
-#homepage-slider .banner .dots li.active {opacity:1; background:#fff;}
-#homepage-slider .banner ul li div {margin:30px; background:#fff; opacity:.8; color:#000; width:400px;}
-#homepage-slider .banner ul li div > h1 {font-size:40px; margin:0; padding:10px;}
-#homepage-slider .banner ul li div > div {font-size:25px; display:block; padding:10px; margin:0; border:0;}
-#homepage-slider .banner ul li div > div > ul {list-style:none; margin:0; padding:0; display:inline-block;}
-#homepage-slider .banner ul li div > div > ul > li {display:block; float:left;}
-/* Content - cntent box */
-.content-box {margin:10px 0; background-color:white;}
-.content-box h1 {padding:25px 15px 35px 15px; font-size:39px; font-weight:bold; color:#EF4135;}
+#homepage-slider {display:block; position:relative;}
+#homepage-slider > .banner {position:relative; overflow:hidden; width:100%; height:283px;}
+#homepage-slider > .banner > ul {list-style:none; margin:0px; padding:0px;}
+#homepage-slider > .banner > ul > li {float: left; display:block; min-height:283px; width:33%; background-size:100% 100%;}
+#homepage-slider > .banner > .dots {position:absolute; bottom:20px; right:20px;}
+#homepage-slider > .banner > .dots > li {display:inline-block; width:10px; height:10px; margin:0 4px; border:2px solid #fff; border-radius:6px; opacity:.4; cursor:pointer; transition:background .5s, opacity .5s; text-indent: -999em;}
+#homepage-slider > .banner > .dots > li.active {opacity:1; background:#fff;}
+#homepage-slider > .banner > ul > li > div {margin:20px 0 0 30px; padding:25px 25px 20px; background:#fff; color:#000; width:400px; font-size:25px; background:url(../images/white_transparent.png) repeat;}
+#homepage-slider > .banner > ul > li > div > h1 {font-size:40px; padding:0 0 15px;}
+#homepage-slider > .banner > ul > li > div > ul {padding:15px 0 0; display:inline-block;}
+#homepage-slider > .banner > ul > li > div > ul > li {display:inline-block; float:left; margin:0 10px 0 0;}
+/* Content - cotent box */
+.content-box {padding:25px 25px 35px; background-color:white;}
+.content-box h1 {padding:25px 0; font-size:43px; font-weight:bold; color:#EF4135;}
+.content-box p {font-size:25px; text-indent:50px; padding:2px 0 4px;}
 
 /* FOOTER */
-#footer-content {background-color:white;}
-/* Footer - footer menu */
-#footer-menu {width:70%; padding:5px; position:relative;}
-#footer-menu a {text-decoration:none; color:inherit;}
-#footer-menu > div {font-size:13px; font-weight:bold; display:block; color:#222222; float:left; margin:15px 0 0 25px; width:140px;}
-#footer-menu > div > a {text-transform:uppercase;}
-#footer-menu > div > ul {margin:10px 0 5px 10px;}
-#footer-menu a:hover {color:#EF4135;}
+#footer-content {background:url(../images/escheresque_ste.png) repeat; padding:15px 25px;}
+/* Footer - footer navigation menu */
+#footer-nav {display:inline-block; float:left;}
+#footer-nav > div {padding:0 30px;}
+#footer-nav > div > #footer-logo {margin: 0 0 10px; border-bottom:1px solid #ddd; text-align:center;}
+#footer-nav > div > #footer-logo > img {padding: 15px 0 10px; opacity:.5;}
+#footer-nav > div > .footer-nav-col {width:140px; display:inline-block; float:left;}
+#footer-nav > div > .footer-nav-col a {text-decoration:none; color:#ddd;}
+#footer-nav > div > .footer-nav-col a:hover {color:#EF4135;}
+#footer-nav > div > .footer-nav-col > div {margin: 0 0 20px;}
+#footer-nav > div > .footer-nav-col > div > a {text-transform:uppercase; font-size:15px; font-weight:bold; color:#fff;}
+#footer-nav > div > .footer-nav-col > div > ul {padding:10px 0 0 8px;}
+#footer-nav > div > .footer-nav-col > div > ul > li {padding:2px 0; font-size:15px; font-weight:bold;}
+#footer-nav > div > .footer-nav-col a {text-decoration:none; color:#aaa;}
+#footer-nav > div > #footer-search-social {border-top:1px #ddd solid; margin:20px 0 0; padding:10px 0 0; clear:left;}
+#footer-nav > div > #footer-search-social > #footer-search > #footer-search-form > #search-querry {background:#ddd;}
+/* Footer - footer contact map */
+#footer-contact {display:block; float:left;}
+#footer-contact #map-box {padding: 0 0 0 10px;}
+#footer-contact #map-box > div {padding:15px 0;}
+#footer-contact #map-box > div > ul {padding:15px 0; display:block; clear:left;}
+#footer-contact #map-box > div > ul > li {color:#aaa;}
+#footer-contact #map-box > div > ul > li > div {display:inline-block; float:left;}
+#footer-contact #map-box > iframe {padding:15px 0;margin:0;}
