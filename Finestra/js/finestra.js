@@ -20,15 +20,18 @@ var activateHomepageSlider = function() {
 }
 
 var renderFooter = function () {
+    var contentWidth = $('#content').width();
     var footerContent = $('#footer-content');
     var footerNav = $('#footer-nav');
+    var footerNavColWidth = $('.footer-nav-col').width();
     var footerContact = $('#footer-contact');
-
+    var footerContactPaddings = footerContact.padding().left + footerContact.padding().right;
+    
     // set widths
-    footerNav.width($('.footer-nav-col') * 3);
-    footerContact.width(footerContent.width()  - footerNav.width());
-    $('#google-map').width(footerContact.width() - 10);
-    $('#google-map').height((footerContact.width()/3) * 2);
+    footerNav.width(((footerNavColWidth * 3) <= contentWidth) ? (footerNavColWidth * 3) : (contentWidth - 30));
+    footerContact.width(footerContent.width() - footerNav.width() - footerContactPaddings - 40);
+    $('#google-map').width(footerContact.width());
+    $('#google-map').height(($('#google-map').width()/3) * 2);
 
     // set navigation
     var navColumns = $('.footer-nav-col');
@@ -44,11 +47,13 @@ var renderFooter = function () {
         else if (i == 2)
             $('#nav-ostalo').clone().appendTo(navColumns[i]);
     }
+
+    // remove unnecessery elements
     $('.footer-nav-col div ul li ul').remove();
-    $(".footer-nav-col div ul").removeClass("sub-nav-ul");
+    $('.footer-nav-col div ul').removeClass('sub-nav-ul');
 
     // set height
-    (footerNav.height() > footerContact.height()) ? footerContent.height(footerNav.height()) : footerContent.height(footerContact.height());
+    footerContent.height($('#footer-content > ul').height() + $('#footer-terms').height());
 
 }
 
