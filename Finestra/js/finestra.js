@@ -1,11 +1,28 @@
-﻿$(document).ready(function() { 
+﻿/* GLOBAL SITE PARAMETERS */
+var g_NavigationFolders = ["alu-drvo", "aluminijum", "pvc", "galerija", "ostalo", "usluge", "kontakt"];
+var g_MobFhoneNumber = "064/324-4526";
+var g_StreetAddress = "Žike Petrovića 76, MLADENOVAC";
+var g_EmailAddress = "srdjo@gmail.com";
+var g_FacebookUrl = "http://www.facebook.com";
+var g_TwitterUrl = "http://www.twitter.com";
+
+
+/* Page initialization functions*/
+$(document).ready(function () {
+    // Temporary highlights currently selected navigation item
+    highlightCurrentNavigationItem();
+
     // render footer menu
     renderFooter();
 
     // Unislider initialization
     activateHomepageSlider();
+
+    // Set contact dat on the page
+    getHiddenContactFieldValue();
 });
 
+/* Home Page Slider initialization function */
 var activateHomepageSlider = function() {
     $(function() {
         $('.banner').unslider({
@@ -19,6 +36,7 @@ var activateHomepageSlider = function() {
     });
 }
 
+/* Fnction which generates footer menies based on main navigation meny items */
 var renderFooter = function () {
     var contentWidth = $('#content').width();
     var footerContent = $('#footer-content');
@@ -28,24 +46,24 @@ var renderFooter = function () {
     var footerContactPaddings = footerContact.padding().left + footerContact.padding().right;
     
     // set widths
-    footerNav.width(((footerNavColWidth * 3) <= contentWidth) ? (footerNavColWidth * 3) : (contentWidth - 30));
-    footerContact.width(footerContent.width() - footerNav.width() - footerContactPaddings - 40);
-    $('#google-map').width(footerContact.width());
-    $('#google-map').height(($('#google-map').width()/3) * 2);
+    //footerNav.width(((footerNavColWidth * 3) <= contentWidth) ? (footerNavColWidth * 3) : (contentWidth - 30));
+    //footerContact.width(footerContent.width() - footerNav.width() - footerContactPaddings - 40);
+    //$('#google-map').width(footerContact.width());
+    //$('#google-map').height(($('#google-map').width()/3) * 2);
 
     // set navigation
     var navColumns = $('.footer-nav-col');
     for (var i = 0; i < navColumns.length; i++) {
         if (i == 0) {
-            $('#nav-drvo-alu').clone().appendTo(navColumns[i]);
-            $('#nav-pvc').clone().appendTo(navColumns[i]);
+            $('#nav-alu-drvo > div').clone().appendTo(navColumns[i]);
+            $('#nav-pvc > div').clone().appendTo(navColumns[i]);
         }
         else if (i == 1) {
-            $('#nav-alu').clone().appendTo(navColumns[i]);
-            $('#nav-uslge').clone().appendTo(navColumns[i]);
+            $('#nav-aluminijum > div').clone().appendTo(navColumns[i]);
+            $('#nav-usluge > div').clone().appendTo(navColumns[i]);
         }
         else if (i == 2)
-            $('#nav-ostalo').clone().appendTo(navColumns[i]);
+            $('#nav-ostalo > div').clone().appendTo(navColumns[i]);
     }
 
     // remove unnecessery elements
@@ -57,6 +75,42 @@ var renderFooter = function () {
 
 }
 
-var setStreetAddress = function() {
+/* Sets global site parameters onto the current page */
+var getHiddenContactFieldValue = function () {
+    var mobFhoneNumberFields = $('.mobile-phone-value');
+    var streetAddressFields = $('.street-address-value');
+    var emailAddressFields = $('.email-address-value');
+    var facebookFields = $('.facebook-url-value');
+    var twitterFields = $('.twitter-url-value');
 
+    for (var i = 0; i < mobFhoneNumberFields.length; i++)
+        mobFhoneNumberFields[i].innerHTML += g_MobFhoneNumber;
+
+    for (var i = 0; i < streetAddressFields.length; i++)
+        streetAddressFields[i].innerHTML += g_StreetAddress;
+
+    for (var i = 0; i < emailAddressFields.length; i++) {
+        emailAddressFields[i].innerHTML += g_EmailAddress;
+        emailAddressFields[i].href = "mailto:" + g_EmailAddress;
+    }
+
+    for (var i = 0; i < facebookFields.length; i++)
+        facebookFields[i].href = g_FacebookUrl;
+
+    for (var i = 0; i < twitterFields.length; i++)
+        twitterFields[i].href = g_TwitterUrl;
+}
+
+/* Function that highlight currently selected content page */
+var highlightCurrentNavigationItem = function () {
+    var urlPathElements = window.location.pathname.split('/');
+
+    if (urlPathElements.length <= 1) return;
+
+    var currentFolder = urlPathElements[urlPathElements.length - 2];
+
+    for (var i = 0; i < g_NavigationFolders.length; i++) {
+        if (g_NavigationFolders[i] == currentFolder)
+            $('#nav-' + currentFolder.replace('_', '-')).css('color', '#EF4135');
+    }
 }
