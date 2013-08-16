@@ -17,7 +17,6 @@ mark {background:none; text-transform:uppercase;}
 .fb-button {background-color:#3B5998 !important;}
 .tw-button {background-color:#4099FF !important;}
 .big-button:hover {background-color:#EF4135 !important;}
-/*.nav-ul {list-style-image:none; list-style-type:none;}*/
 .layout-imgs {background-image:url(../images/finestra_sprite_layout.png); background-repeat:no-repeat;}
 .logo-imgs {background-image:url(../images/logo_imgs_sprite.png); background-repeat:no-repeat;}
 
@@ -77,7 +76,7 @@ mark {background:none; text-transform:uppercase;}
 .content-box h4 {padding:25px 0; font-size:18px; font-weight:bold; color:black;}
 .content-box .intro-paragraph {font-size:24px; text-indent:50px; line-height:28px;}
 .content-box p {font-size:14px; text-indent:20px; padding:2px 0 10px; line-height:20px;}
-.content-box ul {font-size:14px; line-height:25px; padding:10px 0 15px 70px; list-style-type:disc; list-style-position:inside;}
+.content-box ul {font-size:14px; line-height:25px; padding:10px 0 15px 70px; display:inline-block; list-style-type:disc; list-style-position:inside;}
 .content-box img {float:left; }
 .content-page #contet-wrappper {width:70%; float:left;}
 .content-box .content-article-images {text-align:center;}
@@ -89,13 +88,15 @@ mark {background:none; text-transform:uppercase;}
 #feal {background-position:-277px 0; width:126px; height:50px;}
 #siegenia {background-position:0 -52px; width:212px; height:50px;}
 #stublina {background-position:-215px -52px; width:111px; height:50px;}
+/* Content - contacts us */
+#map_canvas {max-width:100%; height:300px; display:block;}
 /* Content - right side modules */
 .content-page #modules-wrapper {width:30%; float:left;}
 .content-page #modules-wrapper #right-modules {padding:10px 10px 35px; background-color:#eee;}
 #right-modules > .modul {margin: 0 0 20px; display:block; background-color:white;}
 #right-modules > .modul > div {padding:15px; color:#aaa;}
 #right-modules > .modul a {text-decoration:none; color:inherit;}
-#right-modules > .modul img {max-width:100%; cursor:pointer;}
+#right-modules > .modul img {max-width:100%; cursor: -webkit-zoom-in; cursor: -moz-zoom-in; cursor: zoom-in;}
 #right-modules > .modul > .module-header {font-size:12px; font-weight:bold; text-transform:uppercase; background-color:#EF4135; color:white; display:block;}
 #right-modules > .modul > .module-content {font-size:16px; overflow:hidden;}
 #right-modules > .modul > .module-content .mobile-phone-value {padding:12px 0 12px 50px;}

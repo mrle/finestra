@@ -1,7 +1,15 @@
 ﻿/* GLOBAL SITE PARAMETERS */
 var g_NavigationFolders = ["alu-drvo", "aluminijum", "pvc", "galerija", "ostalo", "usluge", "kontakt"];
 var g_MobFhoneNumber = "064/324-4526";
-var g_StreetAddress = "Žike Petrovića 76, MLADENOVAC";
+var g_StreetAddress = {
+    streetName: "Žike Petrovića",
+    streetNo: "76", 
+    city: "Mledenovac",
+    zipCode: "",
+    country: "Srbija",
+    streetLangitude: "",
+    streetLongitude: ""
+};
 var g_EmailAddress = "srdjo@gmail.com";
 var g_FacebookUrl = "http://www.facebook.com";
 var g_TwitterUrl = "http://www.twitter.com";
@@ -15,11 +23,23 @@ $(document).ready(function () {
     // render footer menu
     renderFooter();
 
-    // Unislider initialization
-    activateHomepageSlider();
-
     // Set contact dat on the page
-    getHiddenContactFieldValue();
+    setGlopalSiteParameters();
+
+    if ($('.homepage').length > 0) {
+        // Unislider initialization
+        activateHomepageSlider();
+    }
+
+    if ($('.content-page').length > 0) {
+        // Magnific popup initialization
+        activateMagnificPopup();
+    }
+
+    if ($('.contact-page').length > 0) {
+        // Google map initialization
+        initializeGoogleMap();
+    }
 });
 
 /* Home Page Slider initialization function */
@@ -33,6 +53,15 @@ var activateHomepageSlider = function() {
             dots: true,               //  Display dot navigation
             fluid: true               //  Support responsive design. May break non-responsive designs
         });
+    });
+}
+
+/* Magnific popup initialization function */
+var activateMagnificPopup = function () {
+    $('.test-popup-link').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false
     });
 }
 
@@ -76,7 +105,7 @@ var renderFooter = function () {
 }
 
 /* Sets global site parameters onto the current page */
-var getHiddenContactFieldValue = function () {
+var setGlopalSiteParameters = function () {
     var mobFhoneNumberFields = $('.mobile-phone-value');
     var streetAddressFields = $('.street-address-value');
     var emailAddressFields = $('.email-address-value');
@@ -87,7 +116,7 @@ var getHiddenContactFieldValue = function () {
         mobFhoneNumberFields[i].innerHTML += g_MobFhoneNumber;
 
     for (var i = 0; i < streetAddressFields.length; i++)
-        streetAddressFields[i].innerHTML += g_StreetAddress;
+        streetAddressFields[i].innerHTML += g_StreetAddress.streetName + " " + g_StreetAddress.streetNo + ", " + g_StreetAddress.city.toUpperCase();
 
     for (var i = 0; i < emailAddressFields.length; i++) {
         emailAddressFields[i].innerHTML += g_EmailAddress;
@@ -113,4 +142,22 @@ var highlightCurrentNavigationItem = function () {
         if (g_NavigationFolders[i] == currentFolder)
             $('#nav-' + currentFolder.replace('_', '-')).css('color', '#EF4135');
     }
+}
+
+/* Function which initializes google map on contac us page */
+function initializeGoogleMap() {
+    var map_canvas = document.getElementById('map_canvas');
+    var map_options = {
+        center: new google.maps.LatLng(44.624686, 20.36293),
+        zoom: 9,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
+    }
+    var map = new google.maps.Map(map_canvas, map_options)
+    var markLatLng = new google.maps.LatLng(44.437702, 20.703278);
+    var marker = new google.maps.Marker({
+        position: markLatLng,
+        map: map,
+        title: "Finestra"
+    });
 }
