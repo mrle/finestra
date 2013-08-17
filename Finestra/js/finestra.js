@@ -17,6 +17,7 @@ var g_TwitterUrl = "http://www.twitter.com";
 
 /* Page initialization functions executed on Document ready event*/
 $(document).ready(function () {
+
     // Temporary highlights currently selected navigation item
     highlightCurrentNavigationItem();
 
@@ -42,7 +43,7 @@ $(document).ready(function () {
 
 /* Main navigation drop down menus displayed on mouse hover event */
 $('#header-main-nav > ul > li').hover(function () {
-    $('#header-main-nav > ul > li > ul').css('display:block;');
+    $('#header-main-nav > ul > li > ul').show();
 });
 
 /* Home Page Slider initialization function */
@@ -59,12 +60,21 @@ var activateHomepageSlider = function () {
 
 /* Magnific popup initialization function */
 var activateMagnificPopup = function () {
-    $('.test-popup-link').magnificPopup({
+    var hahaha = $('.image-link');
+    $('.image-link').magnificPopup({
         type: 'image',
         closeOnContentClick: true,
         closeBtnInside: false
     });
-}
+
+    $('.img-gallery').each(function() {
+        $(this).magnificPopup({
+            delegate: 'a', 
+            type: 'image',
+            gallery: { enabled: true }
+        })
+    });
+};
 
 /* Function which initializes google map on contac us page */
 function initializeGoogleMap() {
