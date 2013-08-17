@@ -45,7 +45,7 @@ mark {background:none; text-transform:uppercase;}
 #header-main-nav > ul {display:inline-block; list-style-position:outside;}
 #header-main-nav > ul > li {max-width:320px; text-align:center; border-top:4px solid white; color:#222; position:relative; display:inline-block;}
 #header-main-nav > ul > li:hover {border-top:4px #EF4135 solid; color:#EF4135;}
-#header-main-nav > ul > li:hover ul {display:block;}
+/*#header-main-nav > ul > li:hover ul {display:block;}*/
 #header-main-nav > ul > li > div > a {font-size:12px; line-height:36px; height:36px; font-weight:bold; padding:0 10px; color:inherit; text-decoration:none; text-transform:uppercase; display:block;}
 .sub-nav-ul {position:absolute; color:#ddd; left:0; top:36px; display:none; overflow:hidden; z-index:1000; background-color:#363636; font-size:12px; list-style-position:outside;}
 .sub-nav-ul > li {max-width:320px; min-width:200px; text-align:left; border-left:4px #363636 solid; color:inherit;}

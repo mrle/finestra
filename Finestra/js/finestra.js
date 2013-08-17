@@ -7,15 +7,15 @@ var g_StreetAddress = {
     city: "Mledenovac",
     zipCode: "",
     country: "Srbija",
-    streetLangitude: "",
-    streetLongitude: ""
+    streetLatitude: "44.437702",
+    streetLongitude: "20.703278"
 };
 var g_EmailAddress = "srdjo@gmail.com";
 var g_FacebookUrl = "http://www.facebook.com";
 var g_TwitterUrl = "http://www.twitter.com";
 
 
-/* Page initialization functions*/
+/* Page initialization functions executed on Document ready event*/
 $(document).ready(function () {
     // Temporary highlights currently selected navigation item
     highlightCurrentNavigationItem();
@@ -40,19 +40,22 @@ $(document).ready(function () {
     }
 });
 
+/* Main navigation drop down menus displayed on mouse hover event */
+$('#header-main-nav > ul > li').hover(function () {
+    $('#header-main-nav > ul > li > ul').css('display:block;');
+});
+
 /* Home Page Slider initialization function */
-var activateHomepageSlider = function() {
-    $(function() {
-        $('.banner').unslider({
-            speed: 500,               //  The speed to animate each slide (in milliseconds)
-            delay: 5000,              //  The delay between slide animations (in milliseconds)
-            complete: function() {},  //  A function that gets called after every slide animation
-            keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-            dots: true,               //  Display dot navigation
-            fluid: true               //  Support responsive design. May break non-responsive designs
-        });
+var activateHomepageSlider = function () {
+    $('.banner').unslider({
+        speed: 500,                 //  The speed to animate each slide (in milliseconds)
+        delay: 5000,                //  The delay between slide animations (in milliseconds)
+        complete: function () { },  //  A function that gets called after every slide animation
+        keys: true,                 //  Enable keyboard (left, right) arrow shortcuts
+        dots: true,                 //  Display dot navigation
+        fluid: true                 //  Support responsive design. May break non-responsive designs
     });
-}
+};
 
 /* Magnific popup initialization function */
 var activateMagnificPopup = function () {
@@ -60,6 +63,24 @@ var activateMagnificPopup = function () {
         type: 'image',
         closeOnContentClick: true,
         closeBtnInside: false
+    });
+}
+
+/* Function which initializes google map on contac us page */
+function initializeGoogleMap() {
+    var map_canvas = document.getElementById('map_canvas');
+    var map_options = {
+        center: new google.maps.LatLng(44.624686, 20.36293),
+        zoom: 9,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
+    }
+    var map = new google.maps.Map(map_canvas, map_options)
+    var markLatLng = new google.maps.LatLng(g_StreetAddress.streetLatitude, g_StreetAddress.streetLongitude);
+    var marker = new google.maps.Marker({
+        position: markLatLng,
+        map: map,
+        title: "Finestra"
     });
 }
 
@@ -140,22 +161,4 @@ var highlightCurrentNavigationItem = function () {
         if (g_NavigationFolders[i] == currentFolder)
             $('#nav-' + currentFolder.replace('_', '-')).css('color', '#EF4135');
     }
-}
-
-/* Function which initializes google map on contac us page */
-function initializeGoogleMap() {
-    var map_canvas = document.getElementById('map_canvas');
-    var map_options = {
-        center: new google.maps.LatLng(44.624686, 20.36293),
-        zoom: 9,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false
-    }
-    var map = new google.maps.Map(map_canvas, map_options)
-    var markLatLng = new google.maps.LatLng(44.437702, 20.703278);
-    var marker = new google.maps.Marker({
-        position: markLatLng,
-        map: map,
-        title: "Finestra"
-    });
 }
