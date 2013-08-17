@@ -30,12 +30,10 @@ $(document).ready(function () {
         // Unislider initialization
         activateHomepageSlider();
     }
-
     if ($('.content-page').length > 0) {
         // Magnific popup initialization
         activateMagnificPopup();
     }
-
     if ($('.contact-page').length > 0) {
         // Google map initialization
         initializeGoogleMap();
