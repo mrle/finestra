@@ -17,6 +17,7 @@ mark {background:none; text-transform:uppercase;}
 .fb-button {background-color:#3B5998 !important;}
 .tw-button {background-color:#4099FF !important;}
 .big-button:hover {background-color:#EF4135 !important;}
+.box-shadow {-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75); box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);}
 .layout-imgs {background-image:url(/images/finestra_sprite_layout.png); background-repeat:no-repeat;}
 .logo-imgs {background-image:url(/images/logo_imgs_sprite.png); background-repeat:no-repeat;}
 .brands-imgs {background:url(/images/parners_imgs.png) no-repeat;}
@@ -80,7 +81,9 @@ mark {background:none; text-transform:uppercase;}
 .content-box p {font-size:14px; text-indent:20px; padding:2px 0 10px; line-height:20px;}
 .content-box .content-box-list {font-size:14px; line-height:25px; padding:10px 0 15px 70px; display:inline-block; list-style-type:disc; list-style-position:inside;}
 .content-box img {float:left;}
-.content-box article div {text-align:center;}
+.content-box .popup-image {clear:left;}
+.content-box .popup-image img {max-height:150px; max-width:150px; margin:10px 40px 10px 10px;}
+.content-box .gallery-wrapper {text-align:center;}
 .content-box .img-gallery {display:inline-block;}
 .content-box .img-gallery > a > img {float:left; max-height:130px; max-width:130px; margin:10px 5px; background-color:white; -webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75); box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);}
 .content-page #contet-wrappper {width:70%; float:left;}
@@ -93,6 +96,8 @@ mark {background:none; text-transform:uppercase;}
 #siegenia {background-position:0 -52px; width:212px; height:50px;}
 #stublina {background-position:-215px -52px; width:111px; height:50px;}
 #alfa-systems {background-position:-328px -52px; width:136px; height:50px;}
+/* Content - gallery */
+.gallery-page .content-box .gallery-wrapper .img-gallery > a > img {height:170px; margin:20px;}
 /* Content - contacts us */
 #map_canvas {max-width:100%; height:300px; display:block;}
 /* Content - right side modules */
@@ -132,7 +137,7 @@ mark {background:none; text-transform:uppercase;}
 #footer-search-social #search-querry {background:#ddd;}
 /* Footer - footer contact map */
 #footer-contact {width:35%; min-width:300px; max-width:400px; float:left;}
-#footer-contact > #footer-contact-details > ul {padding:15px 0; display:block;}
+#footer-contact > #footer-contact-details > ul {padding:20px 0 15px; display:block;}
 #footer-contact > #footer-contact-details > ul > li:first-child {width:106px; padding-bottom:10px;}
 #footer-contact > #footer-contact-details > ul > li:not(:first-child) {padding:2px 0; font-size:14px; font-weight:700;}
 #footer-contact > #footer-contact-details > ul > li:not(:first-child) > div:first-child {float:left; display:block; color:#aaa; text-transform:uppercase; padding:0 4px 0 0; font-weight:normal; width:70px;}

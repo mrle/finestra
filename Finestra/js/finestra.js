@@ -17,6 +17,8 @@ var g_TwitterUrl = "http://www.twitter.com";
 
 /* Page initialization functions executed on Document ready event*/
 $(document).ready(function () {
+    // Set contact dat on the page
+    setGlopalSiteParameters();
 
     // Temporary highlights currently selected navigation item
     highlightCurrentNavigationItem();
@@ -24,14 +26,11 @@ $(document).ready(function () {
     // render footer menu
     renderFooter();
 
-    // Set contact dat on the page
-    setGlopalSiteParameters();
-
     if ($('.homepage').length > 0) {
         // Unislider initialization
         activateHomepageSlider();
     }
-    if ($('.content-page').length > 0) {
+    if ($('.content-page').length > 0 || $('.gallery-page').length > 0) {
         // Magnific popup initialization
         activateMagnificPopup();
     }
@@ -39,11 +38,6 @@ $(document).ready(function () {
         // Google map initialization
         initializeGoogleMap();
     }
-});
-
-/* Main navigation drop down menus displayed on mouse hover event */
-$('#header-main-nav > ul > li').hover(function () {
-    $('#header-main-nav > ul > li > ul').show();
 });
 
 /* Home Page Slider initialization function */
@@ -60,8 +54,7 @@ var activateHomepageSlider = function () {
 
 /* Magnific popup initialization function */
 var activateMagnificPopup = function () {
-    var hahaha = $('.image-link');
-    $('.image-link').magnificPopup({
+    $('.popup-image').magnificPopup({
         type: 'image',
         closeOnContentClick: true,
         closeBtnInside: false
@@ -70,6 +63,7 @@ var activateMagnificPopup = function () {
     $('.img-gallery').each(function() {
         $(this).magnificPopup({
             delegate: 'a', 
+            closeBtnInside: false,
             type: 'image',
             gallery: { enabled: true }
         })
