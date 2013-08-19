@@ -1,14 +1,13 @@
 ﻿/* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
-.main-font {font-family:Helvetica, Arial, sans-serif;}
-.secondary-font {font-family:'Open Sans Condensed',sans-serif;}
-.text-font {font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+.main-font {font-family:Helvetica, Arial, sans-serif; color:#313131;}
+.secondary-font {font-family:'Open Sans Condensed',sans-serif; color:#313131;}
+.text-font {font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#313131;}
 
 /* Common elements */
 body {margin:0; background-color:#363636; background:#aaa;}
-mark {background:none; text-transform:uppercase;}
-#content {width:900px; min-width:320px; margin:0 auto;}
+mark {background:none; text-transform:uppercase; color:inherit;}
 .footer-big-button {background-color:#EF4135; height:38px;}
 .footer-big-button:hover {background-color:#aaa; color:#EF4135;}
 .footer-big-button > a {text-decoration:none; color:white; font-weight:bold; font-size:14px; text-transform:uppercase; padding:12px 20px; position:absolute;}
@@ -18,9 +17,8 @@ mark {background:none; text-transform:uppercase;}
 .tw-button {background-color:#4099FF !important;}
 .big-button:hover {background-color:#EF4135 !important;}
 .box-shadow {-webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75); -moz-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75); box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.75);}
-.layout-imgs {background-image:url(/images/finestra_sprite_layout.png); background-repeat:no-repeat;}
-.logo-imgs {background-image:url(/images/logo_imgs_sprite.png); background-repeat:no-repeat;}
-.brands-imgs {background:url(/images/parners_imgs.png) no-repeat;}
+.finestra-sprite-layout {background-image:url(/images/finestra_sprite_layout.png); background-repeat:no-repeat;}
+.brands-sprite-layout {background:url(/images/brends_sprite_layout.png) no-repeat;}
 
 /* HEADER */
 #header-content {background:url(/images/diagonal-noise.png) repeat;}
@@ -42,7 +40,7 @@ mark {background:none; text-transform:uppercase;}
 #top-go:hover {background-position:-64px -32px;}
 /* Header - logo */
 #hedaer-top-logo > div {border-bottom:2px black solid; height:120px; vertical-align:bottom;}
-#hedaer-top-logo > div > a {background:url(/images/main_finestra_logo.png) no-repeat 0 0px; width:320px; height:87px; display:block; margin:0 auto;}
+#hedaer-top-logo > div > a {background-position:-162px 0; width:320px; height:87px; display:block; margin:0 auto;}
 /* Header - main navigation */
 #header-main-nav {border-bottom:1px solid #aaa; text-align:center; background:#fff;}
 #header-main-nav > ul {display:inline-block; list-style-position:outside;}
@@ -57,6 +55,7 @@ mark {background:none; text-transform:uppercase;}
 .sub-nav-ul a:hover {color:#EF4135;}
 
 /* CONTENT */
+#content {width:900px; min-width:320px; margin:0 auto;}
 #main-content {height:auto; background-color:#ddd; padding:15px 25px;}
 /* Content - homepage slider */
 #homepage-slider {display:block; position:relative;}
@@ -70,13 +69,13 @@ mark {background:none; text-transform:uppercase;}
 #homepage-slider > .banner > ul > li > div > h1 {font-size:40px; padding:0 0 15px;}
 #homepage-slider > .banner > ul > li > div > ul {padding:15px 0 0; display:inline-block;}
 #homepage-slider > .banner > ul > li > div > ul > li {display:inline-block; float:left; margin:0 10px 0 0;}
-/* Content - cotent box */
+/* Content - content box - common */
 #main-content > div {overflow:hidden;}
 .main-content-header > img {max-width:100%; max-height:100%; display:block;}
 .content-box {padding:25px 25px 35px; background-color:white;}
 .content-box h1 {padding:25px 0; font-size:50px; font-weight:normal; color:#EF4135;}
 .content-box h2 {padding:25px 0; font-size:22px; font-weight:bold; color:#EF4135; clear:left;}
-.content-box h4 {padding:25px 0; font-size:18px; font-weight:bold; color:black;}
+.content-box h4 {padding:25px 0; font-size:18px; font-weight:bold;}
 .content-box .intro-paragraph {font-size:24px; text-indent:50px; line-height:28px;}
 .content-box p {font-size:14px; text-indent:20px; padding:2px 0 10px; line-height:20px;}
 .content-box .content-box-list {font-size:14px; line-height:25px; padding:10px 0 15px 70px; display:inline-block; list-style-type:disc; list-style-position:inside;}
@@ -96,10 +95,25 @@ mark {background:none; text-transform:uppercase;}
 #siegenia {background-position:0 -52px; width:212px; height:50px;}
 #stublina {background-position:-215px -52px; width:111px; height:50px;}
 #alfa-systems {background-position:-328px -52px; width:136px; height:50px;}
+#viomal {background-position:-405px 0; width:219px; height:50px;}
 /* Content - gallery */
-.gallery-page .content-box .gallery-wrapper .img-gallery > a > img {height:170px; margin:20px;}
+.gallery-page .content-box .gallery-wrapper .img-gallery > a > img {height:170px; margin:20px; border:solid 4px white;}
 /* Content - contacts us */
-#map_canvas {max-width:100%; height:300px; display:block;}
+.contact-page #map_canvas {max-width:100%; height:300px; display:block;}
+.contact-page #map_canvas #map-canvas-commands {display:none;}
+.contact-page .content-box .contacts-info-wrapper {margin:10px 0 20px 160px;}
+.contact-page .content-box .contacts-info-wrapper > ul > li {padding-bottom:5px;}
+.contact-page .content-box .contacts-info-wrapper > ul > li a {text-decoration:none; color:inherit;}
+.contact-page .content-box .contacts-info-wrapper > ul > li a:hover {color:#EF4135;}
+.contact-page .content-box .contacts-info-wrapper > ul > li > div {position:relative;}
+.contact-page .content-box .contacts-info-wrapper > ul > li > div > div {display:inline-block;}
+.contact-page .content-box .contacts-info-wrapper > ul > li > div > div:first-child {width:32px; height:32px;}
+.contact-page .content-box .contacts-info-wrapper > ul > li > div > div:last-child {position:absolute; top:50%; padding-left:10px; margin-top:-8px;}
+.contact-page .content-box .contacts-info-wrapper #contacts-info-tel > div:first-child {background-position:-34px -104px;}
+.contact-page .content-box .contacts-info-wrapper #contacts-info-email > div:first-child {background-position:-1px -104px;}
+.contact-page .content-box .contacts-info-wrapper #contacts-info-address > div:first-child {background-position:-67px -104px;}
+.contact-page .content-box .contacts-info-wrapper #contacts-info-fb > div:first-child {background-position:-100px -104px;}
+.contact-page .content-box .contacts-info-wrapper #contacts-info-tw > div:first-child {background-position:-1px -137px;}
 /* Content - right side modules */
 .content-page #modules-wrapper {width:30%; float:left;}
 .content-page #modules-wrapper #right-modules {padding:10px 10px 10px; background-color:#eee;}
@@ -114,7 +128,7 @@ mark {background:none; text-transform:uppercase;}
 #right-modules > .modul > .module-content ul {padding:0 0 10px;}
 #right-modules > .modul > .module-content > a {text-transform:uppercase; font-size:12px; font-weight:bold; color:#EF4135; float:right;}
 #right-modules > .modul > .module-content > a:hover {text-decoration:underline; color:#aaa;}
-#right-modules > .modul > .module-content .module-brands {display:block; margin:0 auto 10px;}
+#right-modules > .modul > .module-content .module-brands {display:block; margin:0 auto 10px; max-width:100%;}
 
 /* FOOTER */
 #footer-content {background:url(/images/tweed.png) repeat; padding:25px 35px; border-top:1px solid #aaa;}
@@ -122,7 +136,7 @@ mark {background:none; text-transform:uppercase;}
 /* Footer - footer navigation menu */
 #footer-nav {width:50%; min-width:420px; padding-right:30px; float:left;}
 #footer-nav > #footer-logo {margin: 0 0 10px; border-bottom:1px solid #ddd; text-align:center;}
-#footer-nav > #footer-logo > a > div {margin:15px auto 10px auto;  width:183px; height:31px; background-position:0 0;}
+#footer-nav > #footer-logo > a > div {margin:15px auto 10px auto;  width:183px; height:31px; background-position:-116px -180px;}
 /*#footer-nav > #footer-logo > a > div:hover {background-position:0 -31px;}*/
 #footer-nav > ul {display:block;}
 #footer-nav > ul > .footer-nav-col {max-width:140px; min-width:120px; width:33%; display:block; float:left;}

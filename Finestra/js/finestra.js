@@ -1,14 +1,14 @@
 ﻿/* GLOBAL SITE PARAMETERS */
 var g_NavigationFolders = ["alu-drvo", "aluminijum", "pvc", "galerija", "ostalo", "usluge", "kontakt"];
-var g_MobFhoneNumber = "064/324-4526";
+var g_MobFhoneNumber = "+ 381 63 1782824";
 var g_StreetAddress = {
-    streetName: "Žike Petrovića",
-    streetNo: "76", 
+    streetName: "Petra Drapšina",
+    streetNo: "", 
     city: "Mledenovac",
     zipCode: "",
     country: "Srbija",
-    streetLatitude: "44.437702",
-    streetLongitude: "20.703278"
+    streetLatitude: "44.448165",
+    streetLongitude: "20.68884"
 };
 var g_EmailAddress = "srdjo@gmail.com";
 var g_FacebookUrl = "http://www.facebook.com";
@@ -146,11 +146,15 @@ var setGlopalSiteParameters = function () {
         emailAddressFields[i].href = "mailto:" + g_EmailAddress;
     }
 
-    for (var i = 0; i < facebookFields.length; i++)
+    for (var i = 0; i < facebookFields.length; i++) {
         facebookFields[i].href = g_FacebookUrl;
+        facebookFields[i].title = "Posetite nas na Facebook-u";
+    }
 
-    for (var i = 0; i < twitterFields.length; i++)
+    for (var i = 0; i < twitterFields.length; i++) {
         twitterFields[i].href = g_TwitterUrl;
+        twitterFields[i].title = "Posetite nas na Twitter-u";
+    }
 }
 
 /* Function that highlight currently selected content page */
