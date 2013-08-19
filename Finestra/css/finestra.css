@@ -112,7 +112,7 @@ mark {background:none; text-transform:uppercase; color:inherit;}
 .contact-page .content-box .contacts-info-wrapper #contacts-info-tel > div:first-child {background-position:-34px -104px;}
 .contact-page .content-box .contacts-info-wrapper #contacts-info-email > div:first-child {background-position:-1px -104px;}
 .contact-page .content-box .contacts-info-wrapper #contacts-info-address > div:first-child {background-position:-67px -104px;}
-.contact-page .content-box .contacts-info-wrapper #contacts-info-fb > div:first-child {background-position:-100px -104px;}
+.contact-page .content-box .contacts-info-wrapper #contacts-info-fb > div:first-child {background-position:-34px -137px;}
 .contact-page .content-box .contacts-info-wrapper #contacts-info-tw > div:first-child {background-position:-1px -137px;}
 /* Content - right side modules */
 .content-page #modules-wrapper {width:30%; float:left;}
