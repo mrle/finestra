@@ -56,6 +56,8 @@ var activateHomepageSlider = function () {
 var activateMagnificPopup = function () {
     $('.popup-image').magnificPopup({
         type: 'image',
+        //fixedContentPos: true,
+        //overflowY: 'scroll',
         closeOnContentClick: true,
         closeBtnInside: false
     });
