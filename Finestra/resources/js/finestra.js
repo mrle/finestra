@@ -4,18 +4,18 @@ var g_MobFhoneNumber = "+ 381 63 1782824";
 var g_StreetAddress = {
     streetName: "Petra Drapšina",
     streetNo: "", 
-    city: "Mledenovac",
+    city: "Mladenovac",
     zipCode: "",
     country: "Srbija",
     streetLatitude: "44.448165",
     streetLongitude: "20.68884"
 };
-var g_EmailAddress = "srdjo@gmail.com";
+var g_EmailAddress = "finestra.rs@gmail.com";
 var g_FacebookUrl = "http://www.facebook.com";
 var g_TwitterUrl = "http://www.twitter.com";
 
-
-/* Page initialization functions executed on Document ready event*/
+/* EVENTS */
+/* Page load event -  initialization functions executed on Document ready event*/
 $(document).ready(function () {
     // Set contact dat on the page
     setGlopalSiteParameters();
@@ -40,6 +40,39 @@ $(document).ready(function () {
     }
 });
 
+/* Main navigation menu hover event - adding delay for drop down menu */
+
+$('#header-main-nav > ul > li').hover(
+    // mouse in
+    function () {
+        jQuery('ul', this).addClass('hover');
+        //jQuery('ul', this).doTimeout('hover', 250, 'addClass', 'hover');
+    },
+    // mouse out
+    function () {
+        jQuery('ul', this).removeClass('hover');
+        //jQuery('ul', this).doTimeout('hover', 250, 'removeClass', 'hover');
+    }
+);
+
+/* Main navigation menu hover event - adding delay for drop down menu */
+/*
+var i = function () {
+    jQuery('ul', this).addClass('hover');
+};
+var o = function () {
+    jQuery('ul', this).removeClass('hover');
+};
+$('#header-main-nav > ul > li').hoverIntent({
+    // mouse in
+    over: i,
+    // mouse out
+    out: o
+});
+*/
+
+
+/* HELPER FUNCTIONS */
 /* Home Page Slider initialization function */
 var activateHomepageSlider = function () {
     $('.banner').unslider({
@@ -56,8 +89,6 @@ var activateHomepageSlider = function () {
 var activateMagnificPopup = function () {
     $('.popup-image').magnificPopup({
         type: 'image',
-        //fixedContentPos: true,
-        //overflowY: 'scroll',
         closeOnContentClick: true,
         closeBtnInside: false
     });
@@ -90,7 +121,7 @@ function initializeGoogleMap() {
     });
 }
 
-/* Fnction which generates footer menies based on main navigation meny items */
+/* Fnction which generates footer menies based on main navigation meny items - this one is not doen yet, it is hardcoded and it requires improvement*/
 var renderFooter = function () {
     var contentWidth = $('#content').width();
     var footerContent = $('#footer-content');
@@ -141,7 +172,7 @@ var setGlopalSiteParameters = function () {
         mobFhoneNumberFields[i].innerHTML += g_MobFhoneNumber;
 
     for (var i = 0; i < streetAddressFields.length; i++)
-        streetAddressFields[i].innerHTML += g_StreetAddress.streetName + " " + g_StreetAddress.streetNo + ", " + g_StreetAddress.city.toUpperCase();
+        streetAddressFields[i].innerHTML += g_StreetAddress.streetName + (g_StreetAddress.streetNo == "" ? "" : g_StreetAddress.streetNo) + ", " + g_StreetAddress.city.toUpperCase();
 
     for (var i = 0; i < emailAddressFields.length; i++) {
         emailAddressFields[i].innerHTML += g_EmailAddress;
