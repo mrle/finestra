@@ -11,7 +11,7 @@ var g_StreetAddress = {
     streetLongitude: "20.68884"
 };
 var g_EmailAddress = "finestra.rs@gmail.com";
-var g_FacebookUrl = "http://www.facebook.com";
+var g_FacebookUrl = "https://www.facebook.com/pages/Finestra/205209232986302";
 var g_TwitterUrl = "http://www.twitter.com";
 
 /* EVENTS */
