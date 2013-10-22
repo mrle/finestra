@@ -165,5 +165,5 @@ mark {background:none; text-transform:uppercase; color:inherit;}
 #map-box > a > img {width:350px; height:200px; cursor: -webkit-zoom-in; cursor: -moz-zoom-in; cursor: zoom-in;}
 /* Footer - footer terms */
 #footer-terms {padding:2px 4px; background-color:#363636; color:#aaa; display:block; font-size:12px; height:12px;}
-#footer-terms > div:first-child {display:block; float:left;}
-#footer-terms > div:not(:first-child) {display:block; float:right;}
+#footer-terms > div:first-child {float:left;}
+#footer-terms > div:not(:first-child) {float:right;}
