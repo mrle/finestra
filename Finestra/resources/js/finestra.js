@@ -2,7 +2,7 @@
 var g_NavigationFolders = ["alu-drvo", "aluminijum", "pvc", "galerija", "ostalo", "usluge", "kontakt"];
 var g_MobFhoneNumber = "+ 381 63 1782824";
 var g_StreetAddress = {
-    streetName: "Petra Drapšina",
+    streetName: "Petra Drapšina BB",
     streetNo: "", 
     city: "Mladenovac",
     zipCode: "",
